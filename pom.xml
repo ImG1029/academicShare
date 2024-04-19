@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.una</groupId>
-	<artifactId>academicShare</artifactId>
+	<artifactId>academicshare-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>academicShare</name>
 	<description>Projeto Academic Share</description>
