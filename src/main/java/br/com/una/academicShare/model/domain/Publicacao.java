@@ -7,22 +7,23 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_publicacao")
 public class Publicacao {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idPublicacao;
     private String conteudo;
-
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "id_autor")
     private Usuario usuario;
+    @ManyToOne //@OneToMany
+    @JoinColumn(name = "id_assunto")
+    private Assunto assunto;
 
-    public Long getId() {
-        return id;
+    public Long getIdPublicacao() {
+        return idPublicacao;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdPublicacao(Long idPublicacao) {
+        this.idPublicacao = idPublicacao;
     }
 
     public String getConteudo() {
@@ -41,16 +42,24 @@ public class Publicacao {
         this.usuario = usuario;
     }
 
+    public Assunto getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(Assunto assunto) {
+        this.assunto = assunto;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Publicacao that = (Publicacao) o;
-        return Objects.equals(id, that.id) && Objects.equals(conteudo, that.conteudo) && Objects.equals(usuario, that.usuario);
+        return Objects.equals(idPublicacao, that.idPublicacao) && Objects.equals(conteudo, that.conteudo) && Objects.equals(usuario, that.usuario) && Objects.equals(assunto, that.assunto);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, conteudo, usuario);
+        return Objects.hash(idPublicacao, conteudo, usuario, assunto);
     }
 }
