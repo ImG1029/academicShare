@@ -50,7 +50,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public double getNumeroDeMatricula() {
+    public int getNumeroDeMatricula() {
         return numeroDeMatricula;
     }
 
@@ -78,4 +78,14 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(idUsuario, nome, email, senha, numeroDeMatricula, curso);
     }
+
+    public void update(Long idUsuario, Usuario usuario) {
+        this.idUsuario = idUsuario;
+        this.nome = usuario.getNome();
+        this.email = usuario.getEmail();
+        this.senha = usuario.getSenha();
+        this.numeroDeMatricula = usuario.getNumeroDeMatricula();
+        this.curso = usuario.getCurso();
+    }
+
 }

@@ -62,4 +62,11 @@ public class Curso {
     public int hashCode() {
         return Objects.hash(idCurso, nome, idTipoCurso, faculdade);
     }
+
+    public void update(Long idCurso , Curso curso) {
+        this.idCurso = idCurso;
+        this.nome = getNome();
+
+    }
+
 }
