@@ -36,4 +36,11 @@ public class Assunto {
     public int hashCode() {
         return Objects.hash(idAssunto, Nome);
     }
+
+    public void update(Long idAssunto, Assunto assunto) {
+        this.idAssunto = idAssunto;
+        this.Nome = assunto.getNome();
+
+    }
+
 }

@@ -40,4 +40,10 @@ public class Faculdade {
     public int hashCode() {
         return Objects.hash(idFaculdade, nome);
     }
+
+    public void update(Long idFaculdade, Faculdade faculdade) {
+        this.idFaculdade = idFaculdade;
+        this.nome = faculdade.getNome();
+
+    }
 }

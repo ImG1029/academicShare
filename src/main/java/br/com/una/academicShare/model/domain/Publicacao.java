@@ -62,4 +62,13 @@ public class Publicacao {
     public int hashCode() {
         return Objects.hash(idPublicacao, conteudo, usuario, assunto);
     }
+
+    public void update(Long idPublicacao, Publicacao publicacao) {
+        this.idPublicacao = idPublicacao;
+        this.conteudo = publicacao.getConteudo();
+    }
+
+
+
+
 }

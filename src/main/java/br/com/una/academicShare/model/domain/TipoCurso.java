@@ -40,4 +40,9 @@ public class TipoCurso {
     public int hashCode() {
         return Objects.hash(idTipoCurso, nome);
     }
+
+    public void update(Long idTipoCurso, TipoCurso tipoCurso) {
+        this.idTipoCurso = idTipoCurso;
+        this.nome = tipoCurso.getNome();
+    }
 }
